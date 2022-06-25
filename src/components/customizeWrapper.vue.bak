@@ -1,0 +1,68 @@
+<template>
+  <section class="layout_wrapper">
+    <!-- <custimize-empty
+      v-if="errState"
+      :placeHolder="placeHolder"
+    ></custimize-empty>
+    <customize-skeleton v-else-if="load"></customize-skeleton> -->
+    <slot> </slot>
+    <custimize-slogn :placeholder="placeholder"></custimize-slogn>
+  </section>
+</template>
+
+<script lang="ts">
+import { IGlobalState } from '@/store/types'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
+// import CustomizeSkeleton from '@/components/customizeSkeleton.vue'
+// import CustimizeEmpty from '../components/custimizeEmpty.vue'
+import CustimizeSlogn from './custimizeSlogn.vue'
+
+export default defineComponent({
+  name: 'CustomizeArea',
+  props: {
+    placeholder: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  components: {
+    // CustomizeSkeleton,
+    // CustimizeEmpty,
+    CustimizeSlogn,
+  },
+  setup() {
+    const store = useStore<IGlobalState>()
+    return {
+      // errState: computed(() => store.state.errorState),
+      // load: computed(() => store.state.loading),
+      // placeHolder: computed(() => store.state.errPlaceHolder),
+    }
+  },
+})
+</script>
+
+<style lang="less" scoped>
+.layout_wrapper {
+  z-index: -2;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  // background: #f5f6fb;
+  box-sizing: border-box;
+  .footer_place {
+    position: fixed;
+    width: 100%;
+    bottom: 51px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  .home_footer {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 15px;
+    color: #c0c4cc;
+  }
+}
+</style>

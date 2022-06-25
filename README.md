@@ -1,24 +1,10 @@
-# xinyf2
+测试地址
+http://localhost:9000/inter?token=usertest001
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+需要完成的功能
+0: 请求入参改造 完成
+0-1: hooks 以后再说
+1: 判断用户是首次今日 还是刷新 ---->本地缓存用户信息
+2: 处理遮罩 以后再说
+3: 下拉刷新/上啦加载更多 完成
+4: 列表刷新失败时 状态处理 待完成
